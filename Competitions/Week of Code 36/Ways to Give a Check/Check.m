@@ -38,11 +38,11 @@ int knight(int ni, int nj, int ki, int kj) {
     return 0;
 }
 
-int check(int ki, int kj, char board[8][9]) {
+int check(int ki, int kj, char board[8][8]) {
     int ways = 0;
     int pi = 1;
     int pj = 0;
-    for (int j = 1; j < 9; j++) {
+    for (int j = 0; j < 8; j++) {
         if (board[pi][j] == 'P') {
             //printf("%i %i ", pi, j);
             pj = j;
@@ -68,19 +68,19 @@ int main(int argc, const char * argv[]) {
     //NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
     
     int t;
-    scanf("%i", &t);
+    scanf("%i\n", &t);
     for (int scenario = 0; scenario < t; scenario++) {
-        char board[8][9];
+        char board[8][8];
         for (int board_i = 0; board_i < 8; board_i++) {
-            for (int board_j = 0; board_j < 9; board_j++) {
-                scanf("%c", &board[board_i][board_j]);
+            for (int board_j = 0; board_j < 8; board_j++) {
+                scanf("%c\n", &board[board_i][board_j]);
                 //printf("%c %i %i \n", board[board_i][board_j], board_i, board_j);
             }
         }
         
         int ki, kj;
-        for (int board_i = 1; board_i < 8; board_i++) {
-            for (int board_j = 1; board_j < 9; board_j++) {
+        for (int board_i = 0; board_i < 8; board_i++) {
+            for (int board_j = 0; board_j < 8; board_j++) {
                 if (board[board_i][board_j] == 'k') {
                     ki = board_i;
                     kj = board_j;
