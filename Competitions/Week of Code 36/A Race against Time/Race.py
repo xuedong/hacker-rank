@@ -16,6 +16,14 @@ def raceAgainstTime(n, mason_height, heights, prices):
             if carrier_height < position_height:
                 time = 1 + position_height - carrier_height
                 price = prices[n-1-i]
+                idx = heights.index(position_height)
+                if idx == n-1:
+                    dp[i][j] = time + price + dp[i-1][n-1]
+                else:
+                    dp[i][j] = time + price + dp[i-1][n-2-idx]
+            elif carrier_height == position_height and prices[0] < 0:
+                time = 1
+                price = prices[n-1-i]
                 dp[i][j] = time + price + dp[i-1][j-1]
             elif prices[0] >= 0:
                 time = 1
@@ -24,9 +32,13 @@ def raceAgainstTime(n, mason_height, heights, prices):
             else:
                 time1 = 1 + carrier_height - position_height
                 price1 = prices[n-1-i]
+                idx = heights.index(position_height)
                 time2 = 1
                 price2 = 0
-                total1 = time1 + price1 + dp[i-1][j-1]
+                if idx == n-1:
+                    total1 = time1 + price1 + dp[i-1][n-1]
+                else:
+                    total1 = time1 + price1 + dp[i-1][n-2-idx]
                 total2 = time2 + price2 + dp[i-1][j]
                 dp[i][j] = min(total1, total2)
     #print(dp)
