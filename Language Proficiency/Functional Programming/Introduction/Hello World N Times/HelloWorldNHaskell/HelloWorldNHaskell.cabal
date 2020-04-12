@@ -1,0 +1,62 @@
+cabal-version: 1.12
+
+-- This file has been generated from package.yaml by hpack version 0.31.2.
+--
+-- see: https://github.com/sol/hpack
+--
+-- hash: ef2571f0795c950bb1e532e5bd3a86fd982df6e0bf2faf7d05f20e13340258e0
+
+name:           HelloWorldNHaskell
+version:        0.1.0.0
+description:    Please see the README on GitHub at <https://github.com/githubuser/HelloWorldNHaskell#readme>
+homepage:       https://github.com/githubuser/HelloWorldNHaskell#readme
+bug-reports:    https://github.com/githubuser/HelloWorldNHaskell/issues
+author:         Author name here
+maintainer:     example@example.com
+copyright:      2020 Author name here
+license:        BSD3
+license-file:   LICENSE
+build-type:     Simple
+extra-source-files:
+    README.md
+    ChangeLog.md
+
+source-repository head
+  type: git
+  location: https://github.com/githubuser/HelloWorldNHaskell
+
+library
+  exposed-modules:
+      Lib
+  other-modules:
+      Paths_HelloWorldNHaskell
+  hs-source-dirs:
+      src
+  build-depends:
+      base >=4.7 && <5
+  default-language: Haskell2010
+
+executable HelloWorldNHaskell-exe
+  main-is: Main.hs
+  other-modules:
+      Paths_HelloWorldNHaskell
+  hs-source-dirs:
+      app
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      HelloWorldNHaskell
+    , base >=4.7 && <5
+  default-language: Haskell2010
+
+test-suite HelloWorldNHaskell-test
+  type: exitcode-stdio-1.0
+  main-is: Spec.hs
+  other-modules:
+      Paths_HelloWorldNHaskell
+  hs-source-dirs:
+      test
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      HelloWorldNHaskell
+    , base >=4.7 && <5
+  default-language: Haskell2010
