@@ -39,7 +39,7 @@ function getDayName(dateString) {
             dayName = "Tuesday";
             break;
         case 3: 
-            dayName = "Wednsday";
+            dayName = "Wednesday";
             break;
         case 4: 
             dayName = "Thursday";
