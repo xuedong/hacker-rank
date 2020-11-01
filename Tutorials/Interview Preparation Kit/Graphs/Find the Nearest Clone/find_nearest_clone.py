@@ -18,7 +18,6 @@ from collections import defaultdict
 #
 def bfs(graph, ids, visited, target, start):
     visited.add(start)
-    print(visited)
     ans = 0
     if start in graph:
         finish = True
@@ -29,7 +28,7 @@ def bfs(graph, ids, visited, target, start):
         if finish:
             return 100000000
         for neighbor in graph[start]:
-            if ids[neighbor-1] == ids[target-1]:
+            if ids[neighbor-1] == ids[target-1] and neighbor != target:
                 ans += 1
                 return ans
         ans += min([bfs(graph, ids, visited, target, neighbor) for neighbor in graph[start] if neighbor not in visited]) + 1
@@ -53,12 +52,12 @@ def findShortest(graph_nodes, graph_from, graph_to, ids, val):
         graph[graph_to[i]].add(graph_from[i])
 
     res = [bfs(graph, ids, set(), target, target) for target in indices]
-    print(res)
+
     return min(res)
 
 
 if __name__ == '__main__':
-    #fptr = open(os.environ['OUTPUT_PATH'], 'w')
+    fptr = open(os.environ['OUTPUT_PATH'], 'w')
 
     graph_nodes, graph_edges = map(int, input().split())
 
@@ -73,8 +72,8 @@ if __name__ == '__main__':
     val = int(input())
 
     ans = findShortest(graph_nodes, graph_from, graph_to, ids, val)
-    print(ans)
-    #fptr.write(str(ans) + '\n')
 
-    #fptr.close()
+    fptr.write(str(ans) + '\n')
+
+    fptr.close()
 
