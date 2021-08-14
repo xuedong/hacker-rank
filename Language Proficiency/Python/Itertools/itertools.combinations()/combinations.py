@@ -1,5 +1,7 @@
-#!/bin/python3
+#!/usr/bin/env python3
+
 from itertools import combinations
+
 
 if __name__ == "__main__":
     string, n = input().split()

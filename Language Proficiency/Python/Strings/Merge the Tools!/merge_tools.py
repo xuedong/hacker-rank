@@ -1,4 +1,5 @@
-#!/bin/python3
+#!/usr/bin/env python3
+
 
 def merge_the_tools(string, k):
     # your code goes here
@@ -12,6 +13,7 @@ def merge_the_tools(string, k):
             print(''.join([char for char in temp]))
             temp = []
             length = 0
+
 
 if __name__ == '__main__':
     string, k = input(), int(input())

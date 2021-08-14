@@ -1,3 +1,6 @@
+#!/usr/bin/env python3
+
+
 def count_substring(string, sub_string):
     str_len = len(string)
     sub_len = len(sub_string)
@@ -6,6 +9,7 @@ def count_substring(string, sub_string):
         if sub_string == string[i:(i+sub_len)]:
             count += 1
     return count
+
 
 if __name__ == '__main__':
     string = input().strip()

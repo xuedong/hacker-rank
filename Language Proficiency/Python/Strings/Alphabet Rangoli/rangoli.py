@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 import string
 alphabet = string.ascii_lowercase
 
@@ -9,6 +11,7 @@ def print_rangoli(size):
         pattern = '-'.join(alphabet[i:n])
         patterns.append((pattern[::-1]+pattern[1:]).center(4*n-3, '-'))
     print('\n'.join(patterns[::-1]+patterns[1:]))
+
 
 if __name__ == '__main__':
     n = int(input())

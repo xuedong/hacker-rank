@@ -1,5 +1,7 @@
-#!/bin/python3
+#!/usr/bin/env python3
+
 import math
+
 
 if __name__ == "__main__":
     AB = int(input())

@@ -1,4 +1,4 @@
-#!/bin/python3
+#!/usr/bin/env python3
 
 import math
 import os
@@ -6,11 +6,13 @@ import random
 import re
 import sys
 
+
 # Complete the solve function below.
 def solve(s):
     string = s.split(' ')
     result = ' '.join([word.capitalize() for word in string])
     return result
+
 
 if __name__ == '__main__':
     fptr = open(os.environ['OUTPUT_PATH'], 'w')

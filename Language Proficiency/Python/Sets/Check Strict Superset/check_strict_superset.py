@@ -1,4 +1,5 @@
-#!/bin/python3
+#!/usr/bin/env python3
+
 
 if __name__ == "__main__":
     set_a = set(input().split())

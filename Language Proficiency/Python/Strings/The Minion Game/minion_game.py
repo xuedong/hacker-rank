@@ -1,4 +1,7 @@
+#!/usr/bin/env python3
+
 vowels = "AEIOU"
+
 
 def minion_game(string):
     # your code goes here
@@ -17,6 +20,7 @@ def minion_game(string):
         print("Stuart "+str(stuart_score))
     else:
         print("Draw")
+
 
 if __name__ == '__main__':
     s = input()
